@@ -1,11 +1,21 @@
 <mat-sidenav-container class="example-container h-100">
   <mat-sidenav opened mode="side">
     <mat-list>
-      <mat-list-item> Pepper</mat-list-item>
-      <mat-list-item> Salt</mat-list-item>
-      <mat-list-item> Paprika</mat-list-item>
+      <h3 matSubheader>Dyrektywy strukturalne</h3>
+      <mat-list-item>
+        <button mat-button [routerLink]="'ngIf'">ngIf</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button [routerLink]="'ngFor'">ngFor</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button [routerLink]="'ngSwitch'">ngSwitch</button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
     </mat-list>
   </mat-sidenav>
-  Implicit main content
+  <app-page>
+    <router-outlet></router-outlet>
+  </app-page>
 </mat-sidenav-container>
 

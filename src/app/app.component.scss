@@ -1,1 +1,10 @@
 
+mat-list-item button {
+  width: 100%;
+}
+
+:host ::ng-deep {
+  mat-sidenav-container mat-sidenav-content {
+    padding: 20px;
+  }
+}

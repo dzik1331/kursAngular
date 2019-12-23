@@ -1,0 +1,18 @@
+<mat-card>
+  Steruje elementem drzewa DOM usuwając lub dodając element, gdy dany warunek jest spełniony.<br>
+  Dyrektywa *ngIf umożliwia wykorzystanie zmiennej szablonu (template variable) do wyświetlenia widoku w momencie nie
+  spełnienia warunku za pomocę <strong>else</strong>
+</mat-card>
+
+<h3>Przykład:</h3>
+
+<mat-checkbox [(ngModel)]="showPanel">showPanel: {{showPanel}}</mat-checkbox>
+<mat-divider></mat-divider>
+<mat-card *ngIf="showPanel">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum purus et nisl interdum ullamcorper. Suspendisse
+  eu neque nec nisl porttitor egestas eu vitae risus. Nam sollicitudin accumsan ex, ac varius eros sodales a. Ut eu
+  blandit ante. Nulla a dolor sem. Proin tortor ligula, venenatis sed orci ut, pulvinar efficitur lacus. Ut a lacinia
+  orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla et neque lorem.
+  Donec blandit velit turpis, eget ullamcorper ipsum blandit ut. Duis sagittis placerat consectetur. Nullam in est
+  varius, maximus sapien sed, porta elit. Donec tempus vitae arcu sed eleifend. Duis tincidunt faucibus malesuada.
+</mat-card>
