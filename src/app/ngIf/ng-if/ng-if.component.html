@@ -3,16 +3,60 @@
   Dyrektywa *ngIf umożliwia wykorzystanie zmiennej szablonu (template variable) do wyświetlenia widoku w momencie nie
   spełnienia warunku za pomocę <strong>else</strong>
 </mat-card>
+<mat-card class="mt-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Przykład 1:</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>
+    HTML:
+    <code [languages]="['html']" [highlight]="htmlP1">
+    </code>
+    TS:
+    <code [languages]="['typescript']" [highlight]="tsP1">
+    </code>
+  </pre>
+  </mat-expansion-panel>
+  <span class="description">Jeśli zmienna showPanel jest równa <strong>false</strong> to panel zniknie.</span>
+  <mat-checkbox [(ngModel)]="showPanel">showPanel: {{showPanel}}</mat-checkbox>
+  <mat-card *ngIf="showPanel">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum purus et nisl interdum ullamcorper.
+    Suspendisse
+    eu neque nec nisl porttitor egestas eu vitae risus. Nam sollicitudin accumsan ex, ac varius eros sodales a. Ut eu
+    blandit ante. Nulla a dolor sem. Proin tortor ligula, venenatis sed orci ut, pulvinar efficitur lacus. Ut a lacinia
+    orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla et neque lorem.
+    Donec blandit velit turpis, eget ullamcorper ipsum blandit ut. Duis sagittis placerat consectetur. Nullam in est
+    varius, maximus sapien sed, porta elit. Donec tempus vitae arcu sed eleifend. Duis tincidunt faucibus malesuada.
+  </mat-card>
+</mat-card>
 
-<h3>Przykład:</h3>
-
-<mat-checkbox [(ngModel)]="showPanel">showPanel: {{showPanel}}</mat-checkbox>
-<mat-divider></mat-divider>
-<mat-card *ngIf="showPanel">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum purus et nisl interdum ullamcorper. Suspendisse
-  eu neque nec nisl porttitor egestas eu vitae risus. Nam sollicitudin accumsan ex, ac varius eros sodales a. Ut eu
-  blandit ante. Nulla a dolor sem. Proin tortor ligula, venenatis sed orci ut, pulvinar efficitur lacus. Ut a lacinia
-  orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla et neque lorem.
-  Donec blandit velit turpis, eget ullamcorper ipsum blandit ut. Duis sagittis placerat consectetur. Nullam in est
-  varius, maximus sapien sed, porta elit. Donec tempus vitae arcu sed eleifend. Duis tincidunt faucibus malesuada.
+<mat-card class="mt-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Przykład 2:</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>
+    HTML:
+    <code [languages]="['html']" [highlight]="htmlP1">
+    </code>
+    TS:
+    <code [languages]="['typescript']" [highlight]="tsP1">
+    </code>
+  </pre>
+  </mat-expansion-panel>
+  <span class="description">Jeśli zmienna showPanel jest równa <strong>false</strong> to panel zniknie.</span>
+  <mat-checkbox [(ngModel)]="showPanel">showPanel: {{showPanel}}</mat-checkbox>
+  <mat-card *ngIf="showPanel">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum purus et nisl interdum ullamcorper.
+    Suspendisse
+    eu neque nec nisl porttitor egestas eu vitae risus. Nam sollicitudin accumsan ex, ac varius eros sodales a. Ut eu
+    blandit ante. Nulla a dolor sem. Proin tortor ligula, venenatis sed orci ut, pulvinar efficitur lacus. Ut a lacinia
+    orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla et neque lorem.
+    Donec blandit velit turpis, eget ullamcorper ipsum blandit ut. Duis sagittis placerat consectetur. Nullam in est
+    varius, maximus sapien sed, porta elit. Donec tempus vitae arcu sed eleifend. Duis tincidunt faucibus malesuada.
+  </mat-card>
 </mat-card>
