@@ -6,6 +6,7 @@ import {MatButtonModule, MatListModule, MatSidenavModule} from '@angular/materia
 import {PageComponent} from './page/page.component';
 import {AppRouting} from './app.routing';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     MatSidenavModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

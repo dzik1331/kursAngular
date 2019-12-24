@@ -1,3 +1,91 @@
-<p>
-  ng-for works!
-</p>
+<mat-card>
+  Daje możliwość wstawiania w kodzie elementów np. tablicy wartości, które mogą być obiektami lub zwykłymi wartościami
+  liczbowymi.
+  <br><br>
+  Dyrektywa ngFor umożliwia również dostęp do kilku przydatnych zmiennych takich jak:<br>
+
+  <strong>index</strong> - indeks elementu;<br>
+  <strong>even</strong> - zmienna typu boolean zawierająca true gdy indeks rekordu jest liczbą parzystą;<br>
+  <strong>odd</strong> -zmienna typu boolean zawierająca true gdy indeks rekordu jest liczbą nieparzystą;<br>
+  <strong>first</strong> - zmienna przechowująca pierwszy rekord danych;<br>
+  <strong>last</strong> - zmienna przechowująca ostatni rekord danych;<br>
+  <strong>trackBy</strong> - parametr, do którego można przypisać funkcję, która zoptymalizuje odświeżanie danych w
+  tabeli poprzez wykrywanie zmiany np. po id
+</mat-card>
+
+<mat-card class="mt-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Przykład 1:</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>
+    HTML:
+          <code [languages]="['html']" [highlight]="htmlP1">
+          </code>
+    TS:
+          <code [languages]="['typescript']" [highlight]="tsP1">
+          </code>
+  </pre>
+  </mat-expansion-panel>
+  <span class="description">Przykład prentuje użycie dyrektywy ngFor do wyświetlenia listy użytkowników </span>
+  <mat-list *ngIf="users.length> 0; else noUser">
+    <mat-list-item class="user-item" *ngFor="let u of users">
+      {{u.name}}
+    </mat-list-item>
+  </mat-list>
+  <ng-template #noUser><span class="d-block">Brak użytkownika o podanym ID</span></ng-template>
+</mat-card>
+
+<mat-card class="mt-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Przykład 2:</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>
+    HTML:
+          <code [languages]="['html']" [highlight]="htmlP2">
+          </code>
+    CSS:
+          <code [languages]="['css']" [highlight]="cssP2">
+          </code>
+  </pre>
+  </mat-expansion-panel>
+  <span class="description">Przykład prentuje użycie zmiennych oferowanych przez dyrektywę ngFor. <br><br>
+  W przykładzie została wyświetlona wartość zmiennej index, natomiast pozostałe zmienne zostały wykorzystane do zmiany styli listy użytkowników.<br>
+    Przykładowo:<br>
+      - Element listy którego zmienna first i last są równe <strong>true</strong> posiada żółty kolor czcionki<br>
+    - Element listy którego zmienna even jest równa <strong>true</strong> posiada tło koloru szarego<br>
+      - Element listy którego zmienna odd jest równa <strong>true</strong> posiada tło koloru niebieskiego<br><br>
+    Działanie funkcji trackBy można zaobserwować przechodząć do wciskająć f-12 i wyszująć listę użytkowników w kodzie html
+  </span>
+  <button mat-button (click)="updateLastRecord('Jan Kowalski')">Aktualizuj ostatni rekord</button>
+  <mat-checkbox [(ngModel)]="useTrackBy">Używaj trackBy {{useTrackBy}}</mat-checkbox>
+  <mat-list>
+    <ng-container *ngIf="useTrackBy">
+      <mat-list-item class="user-item ngfor-variables" *ngFor="let u of users;let _index = index;
+      let _even = even;
+      let _odd = odd;
+      let _first = first;
+      let _last = last;
+      trackBy: trackByFn" [ngClass]="{'even': _even,'odd': _odd,'first last': _first || _last}"
+      >
+        {{_index}} {{u.name}}
+      </mat-list-item>
+    </ng-container>
+
+    <ng-container *ngIf="!useTrackBy">
+      <mat-list-item class="user-item ngfor-variables" *ngFor="let u of users;let _index = index;
+      let _even = even;
+      let _odd = odd;
+      let _first = first;
+      let _last = last;" [ngClass]="{'even': _even,'odd': _odd,'first last': _first || _last}"
+      >
+        {{_index}} {{u.name}}
+      </mat-list-item>
+    </ng-container>
+  </mat-list>
+</mat-card>
