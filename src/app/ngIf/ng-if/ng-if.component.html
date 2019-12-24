@@ -41,22 +41,21 @@
     </mat-expansion-panel-header>
     <pre>
     HTML:
-    <code [languages]="['html']" [highlight]="htmlP1">
+    <code [languages]="['html']" [highlight]="htmlP2">
     </code>
     TS:
-    <code [languages]="['typescript']" [highlight]="tsP1">
+    <code [languages]="['typescript']" [highlight]="tsP2">
     </code>
   </pre>
   </mat-expansion-panel>
-  <span class="description">Jeśli zmienna showPanel jest równa <strong>false</strong> to panel zniknie.</span>
-  <mat-checkbox [(ngModel)]="showPanel">showPanel: {{showPanel}}</mat-checkbox>
-  <mat-card *ngIf="showPanel">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum purus et nisl interdum ullamcorper.
-    Suspendisse
-    eu neque nec nisl porttitor egestas eu vitae risus. Nam sollicitudin accumsan ex, ac varius eros sodales a. Ut eu
-    blandit ante. Nulla a dolor sem. Proin tortor ligula, venenatis sed orci ut, pulvinar efficitur lacus. Ut a lacinia
-    orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla et neque lorem.
-    Donec blandit velit turpis, eget ullamcorper ipsum blandit ut. Duis sagittis placerat consectetur. Nullam in est
-    varius, maximus sapien sed, porta elit. Donec tempus vitae arcu sed eleifend. Duis tincidunt faucibus malesuada.
-  </mat-card>
+  <span class="description">Przykład przentuje użycie dyrektywy ngIf z operatorem <strong>else</strong>.Jeśli podamy w inpucie id użytkownia który nie istnieje, zamiast listy zostanie wyświetlony komunikat o braku użytkownika. </span>
+  <mat-form-field class="example-full-width">
+    <input (ngModelChange)="filterUser()" type="number" matInput [(ngModel)]="userfilter" placeholder="ID użytkownika">
+  </mat-form-field>
+  <mat-list *ngIf="users.length> 0; else noUser">
+    <mat-list-item *ngFor="let u of users">
+      {{u.name}}
+    </mat-list-item>
+  </mat-list>
+  <ng-template #noUser><span class="d-block">Brak użytkownika o podanym ID</span></ng-template>
 </mat-card>

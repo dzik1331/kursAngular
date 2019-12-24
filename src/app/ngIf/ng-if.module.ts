@@ -1,7 +1,7 @@
 import {CommonModule} from '@angular/common';
 import {NgIfComponent} from './ng-if/ng-if.component';
 import {NgIfRouting} from './ng-if.routing';
-import {MatCardModule, MatCheckboxModule, MatDividerModule, MatExpansionModule} from '@angular/material';
+import {MatCardModule, MatCheckboxModule, MatDividerModule, MatExpansionModule, MatInputModule, MatListModule} from '@angular/material';
 import {HIGHLIGHT_OPTIONS, HighlightModule} from 'ngx-highlightjs';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
@@ -26,7 +26,9 @@ export function getHighlightLanguages() {
     MatDividerModule,
     MatExpansionModule,
     HighlightModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatListModule
   ],
   providers: [
     {
