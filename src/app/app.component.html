@@ -1,6 +1,13 @@
 <mat-sidenav-container class="example-container h-100">
   <mat-sidenav opened mode="side">
     <mat-list>
+      <h3 matSubheader>Interfejsy i klasy</h3>
+      <mat-list-item>
+        <button mat-button [routerLink]="'interfaces'">Interfejs</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button [routerLink]="'class'">Klasa</button>
+      </mat-list-item>
       <h3 matSubheader>Dyrektywy strukturalne</h3>
       <mat-list-item>
         <button mat-button [routerLink]="'ngIf'">ngIf</button>

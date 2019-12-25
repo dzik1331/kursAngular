@@ -1,3 +1,56 @@
-<p>
-  ng-for works!
-</p>
+<mat-card>
+  Przełącza widoki ale nie usuwa z kodu strony elementu przełączanego a jedynie go wykomentowuje
+</mat-card>
+
+<mat-card class="mt-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Przykład 1:</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>
+    HTML:
+    <code [languages]="['html']" [highlight]="htmlP1">
+    </code>
+    TS:
+    <code [languages]="['typescript']" [highlight]="tsP1">
+    </code>
+  </pre>
+  </mat-expansion-panel>
+  <span
+    class="description">Zmieniająć role użytkownika, zauważymy przełączanie się widoku w zalezności od wybranej roli</span>
+
+  <mat-form-field>
+    <mat-label>Rola:</mat-label>
+    <mat-select [(value)]="selectedRole">
+      <mat-option *ngFor="let role of roles" [value]="role.id">
+        {{role.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-card>
+    <div [ngSwitch]="selectedRole">
+      <div *ngSwitchCase="1">
+        <button mat-raised-button>Użytkownicy</button>
+        <button mat-raised-button>Usuń post</button>
+        <button mat-raised-button>Dodaj post</button>
+        <button mat-raised-button>Edytuj post</button>
+      </div>
+      <div *ngSwitchCase="2">
+        <button mat-raised-button>Usuń post</button>
+        <button mat-raised-button>Dodaj post</button>
+        <button mat-raised-button>Edytuj post</button>
+      </div>
+      <div *ngSwitchCase="3">
+        <button mat-raised-button>Dodaj post</button>
+        <button mat-raised-button>Edytuj post</button>
+      </div>
+      <div *ngSwitchDefault>
+        Brak uprawnień
+      </div>
+    </div>
+  </mat-card>
+
+</mat-card>

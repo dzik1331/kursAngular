@@ -3,6 +3,10 @@ import {ModuleWithProviders} from '@angular/core';
 
 export const routes: Routes = [
   {
+    path: 'interfaces',
+    loadChildren: './interfaces/interfaces.module#InterfacesModule'
+  },
+  {
     path: 'ngIf',
     loadChildren: () => import('./ngIf/ng-if.module').then(m => m.NgIfModule),
   },

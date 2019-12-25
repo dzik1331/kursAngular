@@ -11,3 +11,8 @@ export interface User {
   website: string;
   company: Company;
 }
+
+export interface UserFunc {
+  getName: () => string;
+  getCompany?: () => Company;
+}
