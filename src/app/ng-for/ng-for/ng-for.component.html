@@ -38,7 +38,7 @@
   <ng-template #noUser><span class="d-block">Brak użytkownika o podanym ID</span></ng-template>
 </mat-card>
 
-<mat-card class="mt-5">
+<mat-card class="mt-5" style="padding-bottom: 40px;">
   <mat-expansion-panel class="mb-5">
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -60,7 +60,7 @@
       - Element listy którego zmienna first i last są równe <strong>true</strong> posiada żółty kolor czcionki<br>
     - Element listy którego zmienna even jest równa <strong>true</strong> posiada tło koloru szarego<br>
       - Element listy którego zmienna odd jest równa <strong>true</strong> posiada tło koloru niebieskiego<br><br>
-    Działanie funkcji trackBy można zaobserwować przechodząć do wciskająć f-12 i wyszująć listę użytkowników w kodzie html
+    Działanie funkcji trackBy można zaobserwować przechodząć do wciskająć f12 i wyszująć listę użytkowników w kodzie html
   </span>
   <button mat-button (click)="updateLastRecord('Jan Kowalski')">Aktualizuj ostatni rekord</button>
   <mat-checkbox [(ngModel)]="useTrackBy">Używaj trackBy {{useTrackBy}}</mat-checkbox>

@@ -6,8 +6,17 @@
         <button mat-button [routerLink]="'interfaces'">Interfejs</button>
       </mat-list-item>
       <mat-list-item>
-        <button mat-button [routerLink]="'class'">Klasa</button>
+        <button mat-button [routerLink]="'classes'">Klasa</button>
       </mat-list-item>
+
+      <h3 matSubheader>Moduły i komponenty</h3>
+      <mat-list-item>
+        <button mat-button [routerLink]="'moduleComponent/modules'">Moduł</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button [routerLink]="'moduleComponent/components'">Komponent</button>
+      </mat-list-item>
+
       <h3 matSubheader>Dyrektywy strukturalne</h3>
       <mat-list-item>
         <button mat-button [routerLink]="'ngIf'">ngIf</button>
@@ -18,7 +27,7 @@
       <mat-list-item>
         <button mat-button [routerLink]="'ngSwitch'">ngSwitch</button>
       </mat-list-item>
-      <mat-divider></mat-divider>
+
     </mat-list>
   </mat-sidenav>
   <app-page>

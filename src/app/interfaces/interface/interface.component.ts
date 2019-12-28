@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {TitleClass} from '../../title.class';
 import {PageService} from '../../page/page.service';
 import {ActivatedRoute} from '@angular/router';
-import {User} from '../../models/user';
 
 @Component({
   selector: 'app-interface',
@@ -55,8 +54,13 @@ export class InterfaceComponent extends TitleClass implements OnInit {
   }
   `;
 
-  u: Partial<User> = {id: 1};
-  u2: User = {id: 1} as User;
+  tsP1d = `
+  export interface User {
+    id: id;
+    name: name;
+    [key: string]: any;
+  }
+  `;
 
   constructor(pageService: PageService, route: ActivatedRoute) {
     super(pageService, route);
@@ -64,7 +68,6 @@ export class InterfaceComponent extends TitleClass implements OnInit {
 
   ngOnInit() {
     super.ngOnInit();
-    // todo napisac o partialach https://www.obliczeniowo.com.pl/1114
   }
 
 }

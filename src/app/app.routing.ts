@@ -7,6 +7,14 @@ export const routes: Routes = [
     loadChildren: './interfaces/interfaces.module#InterfacesModule'
   },
   {
+    path: 'classes',
+    loadChildren: './classes/classes.module#ClassesModule'
+  },
+  {
+    path: 'moduleComponent',
+    loadChildren: './module-component/module-component.module#ModuleComponentModule'
+  },
+  {
     path: 'ngIf',
     loadChildren: () => import('./ngIf/ng-if.module').then(m => m.NgIfModule),
   },
