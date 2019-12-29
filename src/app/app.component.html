@@ -36,6 +36,14 @@
         <button mat-button [routerLink]="'ngSwitch'">ngSwitch</button>
       </mat-list-item>
 
+      <h3 matSubheader>Komunikacja między komponentami</h3>
+      <mat-list-item>
+        <button mat-button [routerLink]="'componentComunication/relatedComponents/description'">Komponenty powiązane (rodzic <--> dziecko)</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button [routerLink]="'componentComunication/unrelatedComponents'">Komponenty niepowiązane</button>
+      </mat-list-item>
+
     </mat-list>
   </mat-sidenav>
   <app-page>

@@ -1,0 +1,46 @@
+<button mat-raised-button style="margin: 5px;" [routerLink]="'../example'">Przykład</button>
+<mat-card>
+  W Angularze przekazywanie informacji z komponentu rodzica do komponentu dziecka jest możliwe za pomocą adnotacji
+  <strong>@Input()</strong>
+</mat-card>
+<mat-card class="mt-5">
+    <pre>
+      <code [languages]="['typescript']" [highlight]="tsP1">
+      </code>
+    </pre>
+
+  <div class="description">
+    Teraz przekazanie wartości title ogranicza się do poniższego zapisu:
+  </div>
+  <pre>
+      <code [languages]="['html']" [highlight]="htmlP1">
+      </code>
+    </pre>
+</mat-card>
+
+<mat-card class="mt-5">
+  Natomiast odwrotny resultat możemy osiągnać używając adnotacji <strong>@Output()</strong> i przekazywania wartości za
+  pomocą zdarzenia
+</mat-card>
+
+<mat-card class="mt-5">
+    <pre>
+      <code [languages]="['typescript']" [highlight]="tsP2">
+      </code>
+    </pre>
+
+  <div class="description">
+    Teraz, aby przekazać metodę, która wywoła się przy emisji zdarzenia, wystarczy poniższy zapis:
+  </div>
+  <pre>
+      <code [languages]="['html']" [highlight]="htmlP2">
+      </code>
+  </pre>
+  <div class="description">
+    Żeby wyemitować zdarzenie, należy wywołać metodę emit() obiektu titleChanged
+  </div>
+  <pre>
+      <code [languages]="['typescript']" [highlight]="tsP3">
+      </code>
+  </pre>
+</mat-card>

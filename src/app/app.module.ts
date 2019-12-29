@@ -2,11 +2,12 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatListModule, MatSidenavModule} from '@angular/material';
+import {MatButtonModule, MatInputModule, MatListModule, MatSidenavModule} from '@angular/material';
 import {PageComponent} from './page/page.component';
 import {AppRouting} from './app.routing';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import {FormsModule} from '@angular/forms';
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -29,7 +29,11 @@ export const routes: Routes = [
   {
     path: 'ngSwitch',
     loadChildren: () => import('./ng-switch/ng-switch.module').then(m => m.NgSwitchModule),
-  }
+  },
+  {
+    path: 'componentComunication',
+    loadChildren: './component-comunication/component-comunication.module#ComponentComunicationModule'
+  },
 ];
 
 export const AppRouting: ModuleWithProviders = RouterModule.forRoot(routes, {

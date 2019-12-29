@@ -1,0 +1,8 @@
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Imię i nazwisko" [(ngModel)]="name">
+</mat-form-field>
+<button (click)="add()" [disabled]="!name" mat-raised-button>Dodaj</button>
+
+<mat-list>
+  <app-item-list *ngFor="let u of users" [user]="u" (remove)="removeFromList($event)"></app-item-list>
+</mat-list>
