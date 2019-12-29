@@ -79,7 +79,6 @@ export class ClassesComponent extends TitleClass implements OnInit {
 
     const user = new User('Jan', 'Kowalski', 30);
     user.secondName = 'Rafał';
-    console.debug(user.fullName);
   }
 
 }

@@ -7,7 +7,6 @@ export class TitleClass implements OnInit {
   }
 
   ngOnInit() {
-    console.debug('r', this.route.snapshot.data['title']);
     this.pageService.setTitle(this.route.snapshot.data['title']);
   }
 }

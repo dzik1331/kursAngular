@@ -91,7 +91,6 @@ export class NgForComponent extends TitleClass implements OnInit {
   }
 
   trackByFn(index, item) {
-    console.debug('hej',);
     return item.id;
   }
 

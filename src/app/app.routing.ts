@@ -15,6 +15,10 @@ export const routes: Routes = [
     loadChildren: './module-component/module-component.module#ModuleComponentModule'
   },
   {
+    path: 'ngStyleNgClassModule',
+    loadChildren: './ng-style-ng-class/ng-style-ng-class.module#NgStyleNgClassModule'
+  },
+  {
     path: 'ngIf',
     loadChildren: () => import('./ngIf/ng-if.module').then(m => m.NgIfModule),
   },

@@ -1,0 +1,34 @@
+<mat-card>
+  Dyrektywa ngStyle umożliwia dynamiczne modyfikowanie styli danego elementu HTML.
+</mat-card>
+
+<mat-card class="mt-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Przykład 1:</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>
+      <code [languages]="['html']" [highlight]="htmlP1">
+      </code>
+    </pre>
+    <div class="description">Podobny efekt uzyskamy używając atrybutu [style.]</div>
+    <pre>
+      <code [languages]="['html']" [highlight]="htmlP1a">
+      </code>
+    </pre>
+    <pre>
+      <code [languages]="['html']" [highlight]="htmlP1b">
+      </code>
+    </pre>
+  </mat-expansion-panel>
+</mat-card>
+
+<mat-card>
+  <input matInput type="color" [(ngModel)]="color">
+  <div [ngStyle]="{'color': color}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+  <div [style.color]="color">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+  <div [style.font-size]="'20px'">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+  <div [style.font-size.px]="20">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+</mat-card>

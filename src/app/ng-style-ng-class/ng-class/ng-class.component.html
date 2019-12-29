@@ -1,0 +1,34 @@
+<mat-card>
+  Dyrektywa ngClass umożliwia sterowanie dynamicznym podpinaniem wielu klas do jednego elementu HTML za pomocą warunku
+  sterującego.
+</mat-card>
+
+<mat-card class="mt-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Przykład 1:</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>
+      <code [languages]="['css']" [highlight]="cssP1">
+      </code>
+    </pre>
+    <pre>
+      <code [languages]="['html']" [highlight]="htmlP1">
+      </code>
+    </pre>
+    <div class="description">Podobny efekt uzyskamy używając atrybutu [class.]</div>
+    <pre>
+      <code [languages]="['html']" [highlight]="htmlP1a">
+      </code>
+    </pre>
+  </mat-expansion-panel>
+</mat-card>
+
+<mat-card>
+  <mat-checkbox [(ngModel)]="isBold">Bold: {{isBold}}</mat-checkbox>
+  <div [ngClass]="{'bold-font': isBold}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+</mat-card>
+
+
