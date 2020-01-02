@@ -1,0 +1,114 @@
+<mat-card>
+  Pipe to element, który umożliwia w kodzie HTML filtrować dane wejściowe tak, aby wyświetlały się w odpowiednim
+  formacie.
+</mat-card>
+<mat-card class="mt-5">
+  Angular posiada parę domyślnych pipes, takich jak:
+
+  <mat-tab-group>
+    <mat-tab label="AsyncPipe">
+      <mat-card>Subskrybuje się do Observabla lub Promisa i zwraca ostatnią wyemitowaną
+        wartość. Po usunięciu widoku następuje odsubskrybowanie sie od źródła co zapobiega potencjalnemu wyciekowi
+        pamięci
+      </mat-card>
+      <div class="d-block">
+        <pre>
+          <span class="d-block">html:</span>
+          <code [languages]="['html']" [highlight]="htmlP1">
+          </code>
+        </pre>
+
+        <pre>
+          <span class="d-block">ts:</span>
+          <code [languages]="['typescript']" [highlight]="tsP1">
+          </code>
+        </pre>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="DatePipe">
+      <mat-card>Formatuje datę według podanego wzorca.</mat-card>
+      <div>
+        <pre>{{date | date:'long'}}</pre>
+        <pre>{{date | date:'short'}}</pre>
+        <pre>{{date | date:'HH:mm:ss'}}</pre>
+        <pre>{{date | date:'hh:mm:ss'}}</pre>
+        <pre>{{date | date:'yyyy/MM/dd'}}</pre>
+      </div>
+      <div class="d-block">
+        <pre>
+          <span class="d-block">html:</span>
+          <code [languages]="['html']" [highlight]="htmlP2">
+          </code>
+        </pre>
+
+        <pre>
+          <span class="d-block">ts:</span>
+          <code [languages]="['typescript']" [highlight]="tsP2">
+          </code>
+        </pre>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  Pozostałe pipes można znaleźć w <a href="https://angular.io/api?type=pipe" target="_blank">dokumentacji</a>
+
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Własne pipes:</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-card class="mt-5">
+      Najszybszym sposobem utworzenia pipa jest wykorzystanie w konsoli komendy
+      <strong>ng g pipe shortString</strong>
+    </mat-card>
+    <mat-card class="mt-5">
+    <pre>
+      <code [languages]="['typescript']" [highlight]="tsP3">
+      </code>
+    </pre>
+      <pre>
+      <code [languages]="['html']" [highlight]="htmlP3">
+      </code>
+  </pre>
+      <mat-expansion-panel class="mb-5">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h3>ShortStringPipe:</h3>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <pre>
+          <code [languages]="['typescript']" [highlight]="tsP4">
+          </code>
+        </pre>
+        <pre>
+          <code [languages]="['html']" [highlight]="htmlP4">
+          </code>
+        </pre>
+        <div *ngFor="let u of users | async">
+          <div class="d-block">{{u.name | shortString:12}}</div>
+        </div>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="mb-5">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h3>SortPipe:</h3>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <pre>
+          <code [languages]="['typescript']" [highlight]="tsP5">
+          </code>
+        </pre>
+        <pre>
+          <code [languages]="['html']" [highlight]="htmlP5">
+          </code>
+        </pre>
+        <div *ngFor="let u of users | async | sort:'name'">
+          <div class="d-block">{{u.name}}</div>
+        </div>
+      </mat-expansion-panel>
+    </mat-card>
+  </mat-expansion-panel>
+
+</mat-card>

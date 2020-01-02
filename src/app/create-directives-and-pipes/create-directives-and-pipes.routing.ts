@@ -1,6 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
 import {CreateDirectivesComponent} from './create-directives/create-directives.component';
+import {CreatePipesComponent} from './create-pipes/create-pipes.component';
 
 export const routes: Routes = [
   {
@@ -8,6 +9,13 @@ export const routes: Routes = [
     component: CreateDirectivesComponent,
     data: {
       title: 'Dyrektywy'
+    }
+  },
+  {
+    path: 'createPipes',
+    component: CreatePipesComponent,
+    data: {
+      title: 'Pipes'
     }
   }
 ];

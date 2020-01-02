@@ -122,8 +122,6 @@ export class CreateDirectivesComponent extends TitleClass implements OnInit {
       name: [],
       lastName: []
     });
-
-    console.debug(this.form);
     this.loaded = true;
   }
 

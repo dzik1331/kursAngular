@@ -7,4 +7,12 @@ mat-list-item button {
   mat-sidenav-container mat-sidenav-content {
     padding: 20px;
   }
+
+  .mat-subheader {
+    font-size: 15px;
+    font-weight: bolder;
+    background: grey;
+    color: white !important;
+    text-shadow: 1px 1px 1px black;
+  }
 }
