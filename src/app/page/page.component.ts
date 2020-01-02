@@ -10,7 +10,7 @@ import {Subject} from 'rxjs';
   styleUrls: ['./page.component.scss']
 })
 export class PageComponent implements OnInit, OnDestroy {
-  title: string = null;
+  title: string = 'Witaj :)';
   unsubscribe: Subject<any> = new Subject<any>();
 
   constructor(private pageService: PageService) {
