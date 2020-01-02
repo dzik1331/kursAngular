@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./unrelated-components.component.scss']
 })
 export class UnrelatedComponentsComponent implements OnInit {
-
+// @todo do dokończenia
   constructor() { }
 
   ngOnInit() {

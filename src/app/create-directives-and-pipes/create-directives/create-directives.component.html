@@ -1,0 +1,115 @@
+<mat-card>
+  Najszybszym sposobem utworzenia dyrektywy jest wykorzystanie w konsoli komendy
+  <strong>ng g directive bold-number</strong>
+</mat-card>
+
+<mat-card class="mt-5">
+    <pre>
+      <code [languages]="['typescript']" [highlight]="tsP1">
+      </code>
+    </pre>
+  <pre>
+      <code [languages]="['html']" [highlight]="htmlP1">
+      </code>
+  </pre>
+</mat-card>
+
+<mat-card class="mt-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Dyrektywa quote:</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>
+      <code [languages]="['typescript']" [highlight]="tsP2">
+      </code>
+    </pre>
+    <pre>
+      <code [languages]="['html']" [highlight]="htmlP2">
+      </code>
+    </pre>
+
+    <div class="description">Wynik użycia dyrektywy <strong>quote</strong>:<strong></strong></div>
+    <mat-card>
+      <div class="description">Tekst bez dyrektywy</div>
+      <div>
+        Historia matematyki jest prawdopodobnie równie stara jak ludzkość. Przetrwały pewne ślady, zarówno w
+        znaleziskach paleontologów, jak i w języku, które wskazują, że proste obliczenia wykorzystywali prehistoryczni
+        myśliwi, kobiety przewidujące datę miesiączki czy wodzowie plemienni szacujący bojową siłę swoich ludzi.
+        Najstarszymi znanymi tekstami matematycznymi są Plimpton 322 (Babilonia ok. 1900 p.n.e.), papirus moskiewski
+        (Egipt ok. 1850 p.n.e.), papirus Rhinda (Egipt, 1650 p.n.e.), Shulba Sutras (Indie ok. 800 p.n.e.). Wszystkie te
+        teksty wspominają twierdzenie Pitagorasa, które wydaje się najbardziej rozpowszechnionym w starożytności
+        wynikiem matematycznym.
+        Matematyka egipska i sumeryjska była dalej rozwijana przez Greków, którzy ponadto usystematyzowali niezależne
+        dotąd twierdzenia w jeden spójny system[1]. Dalszy rozwój matematyka zawdzięcza Arabom. Wiele greckich i
+        arabskich prac matematycznych następnie przetłumaczono na łacinę, co pozwoliło na dalszy rozwój tych koncepcji w
+        średniowiecznej Europie.
+        Co ciekawe, historia starożytnej i średniowiecznej matematyki składa się z okresów gwałtownego postępu,
+        oddzielonych całymi stuleciami stagnacji. Schemat ten zakończył się dopiero w okresie renesansu. Era
+        nieprzerwanego rozwoju matematyki, rozpoczęta w XVI-wiecznych Włoszech, trwa po dziś dzień.
+      </div>
+    </mat-card>
+    <mat-card>
+      <div class="description">Tekst z dyrektywą</div>
+      <div quote>
+        Historia matematyki jest prawdopodobnie równie stara jak ludzkość. Przetrwały pewne ślady, zarówno w
+        znaleziskach paleontologów, jak i w języku, które wskazują, że proste obliczenia wykorzystywali prehistoryczni
+        myśliwi, kobiety przewidujące datę miesiączki czy wodzowie plemienni szacujący bojową siłę swoich ludzi.
+        Najstarszymi znanymi tekstami matematycznymi są Plimpton 322 (Babilonia ok. 1900 p.n.e.), papirus moskiewski
+        (Egipt ok. 1850 p.n.e.), papirus Rhinda (Egipt, 1650 p.n.e.), Shulba Sutras (Indie ok. 800 p.n.e.). Wszystkie te
+        teksty wspominają twierdzenie Pitagorasa, które wydaje się najbardziej rozpowszechnionym w starożytności
+        wynikiem matematycznym.
+        Matematyka egipska i sumeryjska była dalej rozwijana przez Greków, którzy ponadto usystematyzowali niezależne
+        dotąd twierdzenia w jeden spójny system[1]. Dalszy rozwój matematyka zawdzięcza Arabom. Wiele greckich i
+        arabskich prac matematycznych następnie przetłumaczono na łacinę, co pozwoliło na dalszy rozwój tych koncepcji w
+        średniowiecznej Europie.
+        Co ciekawe, historia starożytnej i średniowiecznej matematyki składa się z okresów gwałtownego postępu,
+        oddzielonych całymi stuleciami stagnacji. Schemat ten zakończył się dopiero w okresie renesansu. Era
+        nieprzerwanego rozwoju matematyki, rozpoczęta w XVI-wiecznych Włoszech, trwa po dziś dzień.
+      </div>
+    </mat-card>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Dyrektywa ico-input:</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>
+      <code [languages]="['typescript']" [highlight]="tsP3">
+      </code>
+    </pre>
+    <pre>
+      <code [languages]="['html']" [highlight]="htmlP3">
+      </code>
+    </pre>
+
+    <div class="description">Formularz utworzony bez dyrektywy <strong>ico-input</strong>:</div>
+    <mat-card>
+      <form *ngIf="loaded" [formGroup]="form">
+        <div fxLayout="col">
+          <input formControlName="name" placeholder="Imię">
+        </div>
+        <div fxLayout="col">
+          <input formControlName="lastName" placeholder="Nazwisko">
+        </div>
+      </form>
+    </mat-card>
+
+    <div class="description">Formularz utworzony za pomocą dyrektywy <strong>ico-input</strong>:</div>
+    <mat-card>
+      <form *ngIf="loaded" [formGroup]="form">
+        <div fxLayout="col">
+          <input formControlName="name" placeholder="Imię" ico-input [icoClass]="['fas', 'fa-balance-scale']">
+        </div>
+        <div fxLayout="col">
+          <input formControlName="lastName" placeholder="Nazwisko" ico-input [icoClass]="['fas', 'fa-balance-scale']">
+        </div>
+      </form>
+    </mat-card>
+  </mat-expansion-panel>
+
+</mat-card>
+

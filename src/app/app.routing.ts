@@ -34,6 +34,10 @@ export const routes: Routes = [
     path: 'componentComunication',
     loadChildren: './component-comunication/component-comunication.module#ComponentComunicationModule'
   },
+  {
+    path: 'createDirectiveAndPipes',
+    loadChildren: './create-directives-and-pipes/create-directives-and-pipes.module#CreateDirectivesAndPipesModule'
+  }
 ];
 
 export const AppRouting: ModuleWithProviders = RouterModule.forRoot(routes, {

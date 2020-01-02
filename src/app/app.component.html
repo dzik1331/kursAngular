@@ -38,10 +38,18 @@
 
       <h3 matSubheader>Komunikacja między komponentami</h3>
       <mat-list-item>
-        <button mat-button [routerLink]="'componentComunication/relatedComponents/description'">Komponenty powiązane (rodzic <--> dziecko)</button>
+        <button mat-button [routerLink]="'componentComunication/relatedComponents/description'">Komponenty powiązane
+          (rodzic <--> dziecko)
+        </button>
       </mat-list-item>
       <mat-list-item>
         <button mat-button [routerLink]="'componentComunication/unrelatedComponents'">Komponenty niepowiązane</button>
+      </mat-list-item>
+
+      <h3 matSubheader>Tworzenie własnych dyrektyw i pipe'ów</h3>
+      <mat-list-item>
+        <button mat-button [routerLink]="'createDirectiveAndPipes/createDirectives'">Dyrektywy
+        </button>
       </mat-list-item>
 
     </mat-list>
