@@ -11,8 +11,21 @@ mat-list-item button {
   .mat-subheader {
     font-size: 15px;
     font-weight: bolder;
-    background: grey;
+    background: #5f6769;
     color: white !important;
     text-shadow: 1px 1px 1px black;
   }
+}
+
+.example-toolbar {
+  height: 5%;
+  min-height: 40px;
+}
+
+.example-container {
+  height: 95%;
+}
+
+mat-toolbar {
+  background: #3c4245;
 }

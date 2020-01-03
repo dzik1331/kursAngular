@@ -1,0 +1,44 @@
+<mat-card>
+  <strong>FormControl</strong> jest podstawowym bytem formularza. Pozwala na śledzenie zmian oraz na walidację
+  pojedynczego pola formularza.
+</mat-card>
+
+<mat-card class="mt-5">
+  <div class="description">Poniższe pole używa do walidacji podstawowego walidatora <strong>required</strong> oraz
+    utworzonego walidatora <strong>AgeValidator</strong> który sprawdza czy wybierający ma skończone 18 lat.
+  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Rok urodzenia</mat-label>
+    <mat-select [formControl]="selectAge">
+      <mat-option *ngFor="let year of years" [value]="year">
+        {{year}}
+      </mat-option>
+    </mat-select>
+    <mat-error>
+      <span *ngIf="selectAge.hasError('ageError')">Musisz posiadać 18 lat</span>
+    </mat-error>
+  </mat-form-field>
+  <div class="d-block">
+    <button [disabled]="selectAge.invalid" mat-raised-button color="primary">Zapisz</button>
+  </div>
+</mat-card>
+
+<mat-expansion-panel class="mb-5">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <h3>Kod:</h3>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <pre>
+    <code [languages]="['typescript']" [highlight]="tsP1">
+    </code>
+  </pre>
+  <pre>
+    <code [languages]="['typescript']" [highlight]="tsP1a">
+    </code>
+  </pre>
+  <pre>
+    <code [languages]="['html']" [highlight]="htmlP1">
+    </code>
+  </pre>
+</mat-expansion-panel>

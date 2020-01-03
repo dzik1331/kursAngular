@@ -1,0 +1,98 @@
+<mat-card>
+  <strong>FormGroup</strong> to grupa instancji FormControl. Pozwala na śledzenie zmian oraz walidację w ramach grupy.
+</mat-card>
+
+<mat-card class="mt-5">
+  <div class="description">Poniższy formularz składa się z grupy, która zawiera 3 pola typu FormControl, zagnieżdzoną grupę zawierajacą pola adresu oraz wykorzystuje tablicę (FormArray) do dynamicznego rozszerzania formularza.
+    Wszystkie pola w formularzu są wymagane. Dodatkowo został użyty walidator dla minimalnej wartości liczbowej oraz sprawdzający czy osoba wypełniajaca formularz skończyła 18 lat.
+  </div>
+  <form [formGroup]="form">
+    <div fxLayout="row">
+      <div class="p-5">
+        <p>
+          <mat-form-field>
+            <mat-label>Rok urodzenia</mat-label>
+            <mat-select [errorStateMatcher]="matcher" formControlName="birthYear">
+              <mat-option *ngFor="let year of years" [value]="year">
+                {{year}}
+              </mat-option>
+            </mat-select>
+            <mat-error>
+                    <span *ngIf="form.controls.birthYear.hasError('ageError')">Musisz posiadać 18 lat</span>
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <mat-label>Imię</mat-label>
+            <input [errorStateMatcher]="matcher" matInput formControlName="name">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <mat-label>Nazwisko</mat-label>
+            <input [errorStateMatcher]="matcher" matInput formControlName="lastname">
+          </mat-form-field>
+        </p>
+
+      </div>
+      <div class="ml-5 p-5">
+        <div formGroupName="address">
+          <p>
+            <mat-form-field>
+              <mat-label>Miejscowość</mat-label>
+              <input [errorStateMatcher]="matcher" matInput formControlName="city">
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <mat-label>Ulica</mat-label>
+              <input [errorStateMatcher]="matcher" matInput formControlName="street">
+            </mat-form-field>
+          </p>
+        </div>
+      </div>
+      <mat-divider [vertical]="true"></mat-divider>
+      <div class="ml-5 p-5">
+        Umiejętności
+        <button mat-icon-button (click)="addNewSkill()"><i class="fas fa-plus-circle"></i></button>
+        <div formArrayName="skills" *ngFor="let skill of form.controls['skills'].controls; let i = index;">
+          <div [formGroupName]="i">
+            <mat-form-field>
+              <mat-label>Umiejętność</mat-label>
+              <input [errorStateMatcher]="matcher" matInput formControlName="name">
+              <mat-error>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Doświadczenie w latach</mat-label>
+              <input type="number" [errorStateMatcher]="matcher" matInput formControlName="yearExperience">
+              <mat-error>
+                      <span *ngIf="form.controls.skills.controls[i].controls.yearExperience.hasError('min')">Podana wartość jest za mała</span>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-block">
+      <button mat-raised-button color="primary" (click)="save()">Zapisz</button>
+    </div>
+  </form>
+</mat-card>
+
+<mat-expansion-panel class="mb-5">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <h3>Kod:</h3>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <pre>
+    <code [languages]="['typescript']" [highlight]="tsP1">
+    </code>
+  </pre>
+  <pre>
+    <code [languages]="['html']" [highlight]="htmlP1">
+    </code>
+  </pre>
+</mat-expansion-panel>

@@ -37,10 +37,14 @@ export const routes: Routes = [
   {
     path: 'createDirectiveAndPipes',
     loadChildren: './create-directives-and-pipes/create-directives-and-pipes.module#CreateDirectivesAndPipesModule'
+  },
+  {
+    path: 'forms',
+    loadChildren: './forms/forms.module#FormsModule'
   }
 ];
 
 export const AppRouting: ModuleWithProviders = RouterModule.forRoot(routes, {
-  useHash: false,
+  useHash: true,
   enableTracing: false
 });

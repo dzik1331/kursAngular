@@ -1,61 +1,17 @@
+<mat-toolbar class="example-toolbar">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
 <mat-sidenav-container class="example-container h-100">
-  <mat-sidenav opened mode="side">
+  <mat-sidenav #sidenav opened mode="side">
     <mat-list>
-      <h3 matSubheader>Interfejsy i klasy</h3>
-      <mat-list-item>
-        <button mat-button [routerLink]="'interfaces'">Interfejs</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-button [routerLink]="'classes'">Klasa</button>
-      </mat-list-item>
-
-      <h3 matSubheader>Moduły i komponenty</h3>
-      <mat-list-item>
-        <button mat-button [routerLink]="'moduleComponent/modules'">Moduł</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-button [routerLink]="'moduleComponent/components'">Komponent</button>
-      </mat-list-item>
-
-      <h3 matSubheader>Dyrektywy ngClass i ngStyle</h3>
-      <mat-list-item>
-        <button mat-button [routerLink]="'ngStyleNgClassModule/ngClass'">ngClass</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-button [routerLink]="'ngStyleNgClassModule/ngStyle'">ngStyle</button>
-      </mat-list-item>
-
-      <h3 matSubheader>Dyrektywy strukturalne</h3>
-      <mat-list-item>
-        <button mat-button [routerLink]="'ngIf'">ngIf</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-button [routerLink]="'ngFor'">ngFor</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-button [routerLink]="'ngSwitch'">ngSwitch</button>
-      </mat-list-item>
-
-      <h3 matSubheader>Komunikacja między komponentami</h3>
-      <mat-list-item>
-        <button mat-button [routerLink]="'componentComunication/relatedComponents/description'">Komponenty powiązane
-          (rodzic <--> dziecko)
-        </button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-button [routerLink]="'componentComunication/unrelatedComponents'">Komponenty niepowiązane</button>
-      </mat-list-item>
-
-      <h3 matSubheader>Tworzenie własnych dyrektyw i pipe'ów</h3>
-      <mat-list-item>
-        <button mat-button [routerLink]="'createDirectiveAndPipes/createDirectives'">Dyrektywy
-        </button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-button [routerLink]="'createDirectiveAndPipes/createPipes'">Pipe
-        </button>
-      </mat-list-item>
-
+      <ng-container *ngFor="let m of menu">
+        <h3 matSubheader>{{m.title}}</h3>
+        <mat-list-item *ngFor="let n of m.navs">
+          <button mat-button [routerLink]="n.router">{{n.name}}</button>
+        </mat-list-item>
+      </ng-container>
     </mat-list>
   </mat-sidenav>
   <app-page>
