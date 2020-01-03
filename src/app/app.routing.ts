@@ -41,6 +41,10 @@ export const routes: Routes = [
   {
     path: 'forms',
     loadChildren: './forms/forms.module#FormsModule'
+  },
+  {
+    path: 'viewChild',
+    loadChildren: './view-child/view-child.module#ViewChildModule'
   }
 ];
 

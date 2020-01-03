@@ -58,6 +58,12 @@ export class AppComponent {
         {router: 'forms/formGroups', name: 'FormGroup'}
       ]
     },
+    {
+      title: 'dekoratory ViewChild/ViewChildren',
+      navs: [
+        {router: 'viewChild', name: 'ViewChild/ViewChildren'},
+      ]
+    },
   ];
 
   constructor() {

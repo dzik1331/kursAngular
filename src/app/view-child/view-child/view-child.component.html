@@ -1,0 +1,69 @@
+<mat-error>UWAGA!!! Do obiektów w których użyto dekaratora @ViewChild i @ViewChildren można się odwoływać dopiero po wygenerowaniu widoku(ngAfterViewInit)</mat-error>
+<mat-card>
+  Dekorator <strong>@ViewChild</strong> daje możliwości odwoływania się do elementów kodu HTML bezpośrednio z poziomu
+  kodu klasy komponentu.
+</mat-card>
+
+<mat-card class="mt-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Przykład 1:</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="d-block description">
+      W tym przykładzie podpinamy się pod zmienną title i otrzymujemy dostęp w kodzie ts do elementu label, dzięki czemu
+      możemy np zmienić styl elementu
+    </div>
+    <pre>
+    <code [languages]="['html']" [highlight]="htmlP1">
+    </code>
+    <code [languages]="['typescript']" [highlight]="tsP1">
+    </code>
+  </pre>
+  </mat-expansion-panel>
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Przykład 2:</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="d-block description">
+      W tym przykładzie podpinamy się pod komponent app-my-label i otrzymujemy dostęp w kodzie ts do tego komponentu,
+      dzięki czemu możemy wywoływać funkcje komponentu z poziomu rodzica.
+      Jeśli w widoku jest użytych wiele komponentów danego typu zostanie pobrany pierwszy.
+    </div>
+    <pre>
+    <code [languages]="['html']" [highlight]="htmlP2">
+    </code>
+    <code [languages]="['typescript']" [highlight]="tsP2">
+    </code>
+    <code [languages]="['typescript']" [highlight]="tsP2a">
+    </code>
+  </pre>
+  </mat-expansion-panel>
+</mat-card>
+
+<mat-card class="mt-5">
+  Dekorator <strong>@ViewChildren</strong> daje możliwości pobrania wszystkich komponentów w widoku rodzica i zwraca je
+  w QueryList
+</mat-card>
+
+<mat-card class="mt-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Przykład 1:</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="d-block description">
+      W tym przykładzie pobieramy wszystkie komponenty app-my-label w widoku rodzica i wywołujemy w każdym funkcje upperCase.
+    </div>
+    <pre>
+    <code [languages]="['html']" [highlight]="htmlP3">
+    </code>
+    <code [languages]="['typescript']" [highlight]="tsP3">
+    </code>
+  </pre>
+  </mat-expansion-panel>
+</mat-card>
