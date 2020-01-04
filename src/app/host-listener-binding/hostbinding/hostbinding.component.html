@@ -1,1 +1,31 @@
-<p>hostbinding works!</p>
+<mat-card>
+  @HostBinding umozliwia związaniee właściwości klasy z właściwością elementu.
+</mat-card>
+
+<mat-card class="mt-5">
+  <pre>
+    <code [languages]="['typescript']" [highlight]="tsP1">
+    </code>
+  </pre>
+</mat-card>
+<div class="d-block mt-5">
+  <div class="description">
+    Poniżej znajduje się zmodyfikowany przykład z sekcji o @HostListener. W momencie wciśnięcia klawisza myszki tło komponentu zmienia się na kolor ustalony w klasie gold.
+  </div>
+  <div class="w-100 d-flex" style="justify-content: center;">
+    <app-ico [bindings]="true"></app-ico>
+  </div>
+</div>
+<mat-card class="mt-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Kod</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>
+    <code [languages]="['typescript']" [highlight]="tsP2">
+    </code>
+  </pre>
+  </mat-expansion-panel>
+</mat-card>

@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
+import {Component, ElementRef, HostBinding, HostListener, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-ico',
@@ -6,11 +6,18 @@ import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
   styleUrls: ['./ico.component.scss']
 })
 export class IcoComponent implements OnInit {
+  @Input() bindings: boolean = false;
+  isMouseDown: boolean = false;
+
+  @HostBinding('class.gold') get color() {
+    return this.isMouseDown;
+  }
 
   constructor(private el: ElementRef) {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   @HostListener('click', ['$event']) click(e) {
     if (this.el.nativeElement.firstChild.style.transform === 'rotate(45deg)') {
@@ -21,7 +28,7 @@ export class IcoComponent implements OnInit {
   }
 
   @HostListener('mouseover', ['$event']) mouseover(e) {
-      this.el.nativeElement.firstChild.style.color = 'yellow';
+    this.el.nativeElement.firstChild.style.color = 'yellow';
   }
 
   @HostListener('mouseleave', ['$event']) mouseleave(e) {
@@ -30,6 +37,7 @@ export class IcoComponent implements OnInit {
 
   @HostListener('window:mousedown', ['$event']) mousedownGlobal(e) {
     this.el.nativeElement.firstChild.style.color = 'red';
+    this.isMouseDown = this.bindings;
   }
 
   @HostListener('mousedown', ['$event']) mousedown(e) {
@@ -39,6 +47,7 @@ export class IcoComponent implements OnInit {
   @HostListener('window:mouseup', ['$event']) mouseupGlobal(e) {
     this.el.nativeElement.firstChild.style.color = 'black';
     this.el.nativeElement.firstChild.style.fontSize = '30px';
+    this.isMouseDown = false;
   }
 
 }
