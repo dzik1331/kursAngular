@@ -7,6 +7,7 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'kurs';
+  expandAll: boolean = false;
   menu = [
     {
       title: 'Interfejsy i klasy',
@@ -59,7 +60,7 @@ export class AppComponent {
       ]
     },
     {
-      title: 'dekoratory ViewChild/ViewChildren',
+      title: 'Dekoratory ViewChild/ViewChildren',
       navs: [
         {router: 'viewChild', name: 'ViewChild/ViewChildren'},
       ]
@@ -74,5 +75,9 @@ export class AppComponent {
   ];
 
   constructor() {
+  }
+
+  expand() {
+    this.expandAll = !this.expandAll;
   }
 }

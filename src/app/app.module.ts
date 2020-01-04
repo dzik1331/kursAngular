@@ -2,7 +2,15 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatIconModule, MatInputModule, MatListModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatExpansionModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatSidenavModule,
+  MatToolbarModule, MatTooltipModule
+} from '@angular/material';
 import {PageComponent} from './page/page.component';
 import {AppRouting} from './app.routing';
 import {HttpClientModule} from '@angular/common/http';
@@ -26,7 +34,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatInputModule,
     FlexLayoutModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule,
+    MatTooltipModule
   ],
   providers: [],
   exports: [],

@@ -3,7 +3,19 @@ mat-list-item button {
   width: 100%;
 }
 
+
 :host ::ng-deep {
+  mat-expansion-panel {
+    border-radius: 0;
+    .mat-expansion-panel-content {
+      background: white;
+    }
+  }
+
+  mat-expansion-panel, mat-expansion-panel-header {
+    background: #5f6769;
+  }
+
   mat-sidenav-container mat-sidenav-content {
     padding: 20px;
   }
@@ -11,7 +23,7 @@ mat-list-item button {
   .mat-subheader {
     font-size: 15px;
     font-weight: bolder;
-    background: #5f6769;
+    //background: #5f6769;
     color: white !important;
     text-shadow: 1px 1px 1px black;
   }

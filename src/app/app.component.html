@@ -2,17 +2,30 @@
   <button mat-icon-button (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
+  <button [matTooltip]="'Rozwiń wszytko'" [matTooltipPosition]="'right'" *ngIf="!expandAll" mat-icon-button (click)="expand();">
+    <mat-icon fontSet="fa" fontIcon="fa-angle-double-down"></mat-icon>
+  </button>
+  <button [matTooltip]="'Zwiń wszystko'" [matTooltipPosition]="'right'" *ngIf="expandAll" mat-icon-button (click)="expand();">
+    <mat-icon fontSet="fa" fontIcon="fa-angle-double-up"></mat-icon>
+  </button>
 </mat-toolbar>
 <mat-sidenav-container class="example-container h-100">
   <mat-sidenav #sidenav opened mode="side">
-    <mat-list>
-      <ng-container *ngFor="let m of menu">
-        <h3 matSubheader>{{m.title}}</h3>
-        <mat-list-item *ngFor="let n of m.navs">
-          <button mat-button [routerLink]="n.router">{{n.name}}</button>
-        </mat-list-item>
-      </ng-container>
-    </mat-list>
+    <ng-container *ngFor="let m of menu">
+      <mat-expansion-panel [expanded]="expandAll">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h3 matSubheader>{{m.title}}</h3>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item *ngFor="let n of m.navs">
+            <button mat-button [routerLink]="n.router">{{n.name}}</button>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+
+    </ng-container>
   </mat-sidenav>
   <app-page>
     <router-outlet></router-outlet>
