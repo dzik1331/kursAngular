@@ -64,6 +64,13 @@ export class AppComponent {
         {router: 'viewChild', name: 'ViewChild/ViewChildren'},
       ]
     },
+    {
+      title: 'HostListener i HostBinding',
+      navs: [
+        {router: 'hlAndHb/hostlistener', name: 'HostListener'},
+        {router: 'hlAndHb/hostbinding', name: 'HostBinding'},
+      ]
+    },
   ];
 
   constructor() {

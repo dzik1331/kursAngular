@@ -45,6 +45,10 @@ export const routes: Routes = [
   {
     path: 'viewChild',
     loadChildren: './view-child/view-child.module#ViewChildModule'
+  },
+  {
+    path: 'hlAndHb',
+    loadChildren: './host-listener-binding/host-listener-binding.module#HostListenerBindingModule'
   }
 ];
 
