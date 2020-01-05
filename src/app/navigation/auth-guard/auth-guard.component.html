@@ -1,0 +1,18 @@
+<mat-card>
+  Aby uniemożliwić użytkownikowi dostępu do poszczególnych ścieżek należy stworzyc serwis implementujący dwie metody
+  canActivate lub canLoad
+</mat-card>
+
+<mat-card class="mt-5">
+  <pre>
+    <code [highlight]="tsP1" [languages]="['typescript']"></code>
+    <code [highlight]="tsP2" [languages]="['typescript']"></code>
+  </pre>
+</mat-card>
+
+<mat-card class="mt-5">
+  <div class="description">Wyłączając uprawnienia administratora przestaniemy posiadać dostęp do sekcji HostListener i
+    HostBinding
+  </div>
+  <mat-checkbox [(ngModel)]="authService.isAdministrator">Uprawnienia administratora</mat-checkbox>
+</mat-card>

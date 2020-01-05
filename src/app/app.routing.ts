@@ -1,5 +1,6 @@
 import {RouterModule, Routes} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
+import {AuthGuardService} from './auth-guard.service';
 
 export const routes: Routes = [
   {
@@ -48,8 +49,14 @@ export const routes: Routes = [
   },
   {
     path: 'hlAndHb',
-    loadChildren: './host-listener-binding/host-listener-binding.module#HostListenerBindingModule'
-  }
+    loadChildren: './host-listener-binding/host-listener-binding.module#HostListenerBindingModule',
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'navigation',
+    loadChildren: './navigation/navigation.module#NavigationModule'
+  },
+  {path: '**', loadChildren: './interfaces/interfaces.module#InterfacesModule'}
 ];
 
 export const AppRouting: ModuleWithProviders = RouterModule.forRoot(routes, {

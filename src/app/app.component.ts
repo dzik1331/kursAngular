@@ -72,6 +72,14 @@ export class AppComponent {
         {router: 'hlAndHb/hostbinding', name: 'HostBinding'},
       ]
     },
+    {
+      title: 'Nawigacja',
+      navs: [
+        {router: 'navigation/routing', name: 'Routing'},
+        {router: 'navigation/lazyloading', name: 'LazyLoading'},
+        {router: 'navigation/authGuard', name: 'Ograniczenie dostępu do ścieżki'},
+      ]
+    },
   ];
 
   constructor() {
