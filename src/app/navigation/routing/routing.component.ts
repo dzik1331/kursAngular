@@ -30,8 +30,25 @@ export class RoutingComponent extends TitleClass implements OnInit {
 
   export const AppRouting: ModuleWithProviders = RouterModule.forRoot(routes, {
     useHash: true, // dodaje lub usuwa hasha z ścieżki
-    enableTracing: false // właćza lub wyłącza logi w consoli dotyczace routingu
+    enableTracing: false // włącza lub wyłącza logi w consoli dotyczace routingu
   });
+
+  // tak utworzony routing należy zaimportować w module
+  @NgModule({
+    declarations: [
+      AppComponent,
+      PageComponent
+    ],
+    imports: [
+      AppRouting,
+     ...
+    ],
+    providers: [],
+    exports: [],
+    bootstrap: [AppComponent]
+  })
+  export class AppModule {
+  }
   `;
   htmlP1 = `
    //html

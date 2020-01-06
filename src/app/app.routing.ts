@@ -56,6 +56,10 @@ export const routes: Routes = [
     path: 'navigation',
     loadChildren: './navigation/navigation.module#NavigationModule'
   },
+  {
+    path: 'async',
+    loadChildren: './asynchronous/asynchronous.module#AsynchronousModule'
+  },
   {path: '**', loadChildren: './interfaces/interfaces.module#InterfacesModule'}
 ];
 

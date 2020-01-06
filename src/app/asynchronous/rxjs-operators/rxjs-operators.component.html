@@ -1,0 +1,76 @@
+<mat-card>
+  Operatory RxJS służą do wykonywania operacji na danych asynchronicznych. Do takich operacji zaliczymy np. filtrowanie
+  lub mapowanie.
+</mat-card>
+<button (click)="unsubscribeAll()">Stop</button>
+<mat-card class="mt-5 mb-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>switchMap</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="description">switchMap sprawia, że po każdej emisji wartości poprzedni strumień jest anulowany.
+      Przydatne w przypadku gdy chcemy mieć pewność, że zapobiegniemy wyciekowi pamięci
+    </div>
+    <button mat-raised-button #switchMapBtn>Start: {{switchMapValue}}</button>
+    <pre>
+      Z eventu kliknięcia w przycisk jest utworzony strumień, gdzie utworzony jest interwał który dzięki operatorowi
+      switchMap po każdorazowym klikięciu jest restartowany
+      <code [languages]="['typescript']" [highlight]="tsP1">
+      </code>
+    </pre>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>map</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="description">Za pomocą map jesteśmy w stanie zmodyfikować dane ze strumienia oraz zwrócić zmodyfikowane
+      wartości.
+    </div>
+    <button mat-raised-button #mapBtn>Start: {{mapValue}}</button>
+    <pre>
+      Z eventu kliknięcia w przycisk jest utworzony strumień, gdzie utworzony jest interwał który dzięki operatorowi
+      switchMap po każdorazowym klikięciu jest restartowany. Ponad to dzieki operatorowi map każda wartość jest dzielona przez dwa
+      <code [languages]="['typescript']" [highlight]="tsP2">
+      </code>
+    </pre>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>filter</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="description">Zwróci tylko te dane ze strumienia, które spełniają określone przez Nas kryteria.
+    </div>
+    <button mat-raised-button #filterBtn>Start: {{filterValue}}</button>
+    <pre>
+      Z eventu kliknięcia w przycisk jest utworzony strumień, gdzie utworzony jest interwał który dzięki operatorowi
+      switchMap po każdorazowym klikięciu jest restartowany. Ponad to dzieki operatorowi filter zwrócowna jest tylko parzysta wartość
+      <code [languages]="['typescript']" [highlight]="tsP3">
+      </code>
+    </pre>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>tap</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="description">Pozwala na wykonanie jakiegoś kodu przed subskrypcją
+    </div>
+    <button mat-raised-button #tapBtn>Start: {{tapValue}}</button>
+    <pre>
+      Z eventu kliknięcia w przycisk jest utworzony strumień, gdzie utworzony jest interwał który dzięki operatorowi
+      switchMap po każdorazowym klikięciu jest restartowany. Ponad to dzieki operatorowi tap, przed subskrypcją interwał jest ustalony na 5 sekund.
+      <code [languages]="['typescript']" [highlight]="tsP4">
+      </code>
+    </pre>
+  </mat-expansion-panel>
+</mat-card>

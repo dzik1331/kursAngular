@@ -80,6 +80,15 @@ export class AppComponent {
         {router: 'navigation/authGuard', name: 'Ograniczenie dostępu do ścieżki'},
       ]
     },
+    {
+      title: 'Asynchroniczność',
+      navs: [
+        {router: 'async/promise', name: 'Promise'},
+        {router: 'async/observable', name: 'Observable'},
+        {router: 'async/rxjs', name: 'Operatory RxJS'},
+        {router: 'async/subjects', name: 'Subject/BehaviorSubject'},
+      ]
+    },
   ];
 
   constructor() {

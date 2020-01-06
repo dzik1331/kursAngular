@@ -16,11 +16,13 @@ import {AppRouting} from './app.routing';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { UserNameComponent } from './user-name/user-name.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageComponent
+    PageComponent,
+    UserNameComponent
   ],
   imports: [
     AppRouting,

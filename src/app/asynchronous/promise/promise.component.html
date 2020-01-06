@@ -1,0 +1,36 @@
+<mat-card>
+  Jest obiektem zwracany z metody, dzięki któremu możemy w łatwy sposób obsługiwać asynchroniczne
+  funkcje i ich rezultaty (tak te wynikające z pełnego sukcesu, jak i z błędów, które mogą się zdarzyć w trakcie
+  wykonania).
+</mat-card>
+
+<mat-card class="mt-5 mb-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Opis</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <pre>
+    <code [highlight]="tsP1" [languages]="['typescript']"></code>
+    <code [highlight]="tsP1a" [languages]="['typescript']"></code>
+    <code [highlight]="tsP1b" [languages]="['typescript']"></code>
+  </pre>
+  </mat-expansion-panel>
+</mat-card>
+
+<mat-card class="mt-5 mb-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Przykład</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <button (click)="synchro()" mat-raised-button>Uruchom synchronicznie</button>
+    <button (click)="asynchro()" mat-raised-button>Uruchom asynchronicznie</button>
+    <pre>
+      <code [languages]="['typescript']" [highlight]="exampleCode">
+      </code>
+    </pre>
+  </mat-expansion-panel>
+</mat-card>

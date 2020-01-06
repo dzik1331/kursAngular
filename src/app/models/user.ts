@@ -12,6 +12,13 @@ export interface User {
   company: Company;
 }
 
+export interface ToDo {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
 export interface UserFunc {
   getName: () => string;
   getCompany?: () => Company;

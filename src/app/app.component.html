@@ -8,6 +8,7 @@
   <button [matTooltip]="'Zwiń wszystko'" [matTooltipPosition]="'right'" *ngIf="expandAll" mat-icon-button (click)="expand();">
     <mat-icon fontSet="fa" fontIcon="fa-angle-double-up"></mat-icon>
   </button>
+  <app-user-name style="position:absolute; right: 30px;"></app-user-name>
 </mat-toolbar>
 <mat-sidenav-container class="example-container h-100">
   <mat-sidenav #sidenav opened mode="side">

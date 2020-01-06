@@ -1,0 +1,41 @@
+<ng-container *ngIf="user">
+  <div class="">
+    <div class="d-flex item">
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="30" fxFlex.md="20" fxFlex.lg="10" fxFlex="10">Imie i nazwisko</div>
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="70" fxFlex.md="80" fxFlex.lg="90" fxFlex="90">{{user?.name}}</div>
+    </div>
+    <div class="d-flex item">
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="30" fxFlex.md="20" fxFlex.lg="10" fxFlex="10">Login</div>
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="70" fxFlex.md="80" fxFlex.lg="90"
+           fxFlex="90">{{user?.username}}</div>
+    </div>
+    <div class="d-flex item">
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="30" fxFlex.md="20" fxFlex.lg="10" fxFlex="10">Email</div>
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="70" fxFlex.md="80" fxFlex.lg="90" fxFlex="90">{{user?.email}}</div>
+    </div>
+    <div class="d-flex item">
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="30" fxFlex.md="20" fxFlex.lg="10" fxFlex="10">Telefon</div>
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="70" fxFlex.md="80" fxFlex.lg="90" fxFlex="90">{{user?.phone}}</div>
+    </div>
+    <div class="d-flex item">
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="30" fxFlex.md="20" fxFlex.lg="10" fxFlex="10">WWW</div>
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="70" fxFlex.md="80" fxFlex.lg="90"
+           fxFlex="90">{{user?.website}}</div>
+    </div>
+    <div class="d-flex item">
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="30" fxFlex.md="20" fxFlex.lg="10" fxFlex="10">Ulica</div>
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="70" fxFlex.md="80" fxFlex.lg="90"
+           fxFlex="90">{{user?.address.street}}</div>
+    </div>
+    <div class="d-flex item">
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="30" fxFlex.md="20" fxFlex.lg="10" fxFlex="10">Miejscowość</div>
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="70" fxFlex.md="80" fxFlex.lg="90"
+           fxFlex="90">{{user?.address.city}}</div>
+    </div>
+    <div class="d-flex item">
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="30" fxFlex.md="20" fxFlex.lg="10" fxFlex="10">Kod pocztowy</div>
+      <div fxLayout="col" fxFlex.xs="50" fxFlex.sm="70" fxFlex.md="80" fxFlex.lg="90"
+           fxFlex="90">{{user?.address.zipcode}}</div>
+    </div>
+  </div>
+</ng-container>

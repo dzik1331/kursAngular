@@ -25,11 +25,11 @@ export class LazyloadingComponent extends TitleClass implements OnInit {
     },
     {
       path: 'ngStyleNgClassModule',
-      loadChildren: './ng-style-ng-class/ng-style-ng-class.module#NgStyleNgClassModule'
+      loadChildren: './ng-style-ng-class/ng-style-ng-class.module#NgStyleNgClassModule' // w projekcie używany jest taki
     },
     {
       path: 'ngIf',
-      loadChildren: () => import('./ngIf/ng-if.module').then(m => m.NgIfModule),
+      loadChildren: () => import('./ngIf/ng-if.module').then(m => m.NgIfModule), // tan zapis pojawił się w kolejnych wersjach angulara
     },
     {
       path: 'ngFor',
@@ -73,6 +73,17 @@ export class LazyloadingComponent extends TitleClass implements OnInit {
     useHash: true,
     enableTracing: false
   });
+
+
+  // We wczytanych modułach routing wygląda identycznie za wyjątkiem exportu.
+  //W głównym module (AppModule) wyglada to tak:
+  export const AppRouting: ModuleWithProviders = RouterModule.forRoot(routes, {
+    useHash: true,
+    enableTracing: false
+  });
+
+  //natiomiast w kolejnych modułach tak:
+  export const NavigationRouting: ModuleWithProviders = RouterModule.forChild(routes);
   `;
 
   constructor(pageService: PageService, route: ActivatedRoute) {

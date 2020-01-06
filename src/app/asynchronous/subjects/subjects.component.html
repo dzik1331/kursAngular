@@ -1,0 +1,44 @@
+<mat-card>Subject jest specjalnym typem Observabla pozwalającym na grupowe wysyłanie wartości do wielu obserwatorów
+</mat-card>
+
+<pre>
+  <code [languages]="['typescript']" [highlight]="tsP1"></code>
+</pre>
+
+<mat-card>
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Przykład</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="description">
+      W tym przykładzie został stworzony serwis w którym utorzony został subject. Serwis posiada dwie metody. Pierwsza
+      wysyła wartość do subskrybentów, druga zwraca obiekt subjecta do którego można się zasubskrybować.
+      <br>
+      Po kliknięciu w przycisk pobrana jest lista użytkowników i do subskrubentów wysłany jest jeden wybrany losowo
+      użytkownik. <br>
+      Subskrybentami są dwa komponenty z dwóch różnych modułów.
+      Pierwszy komponent znajdujący się pod przyciskiem wyświetla szcegóły o użytkowniku, drugi komponent znajdujacy się
+      w w toolbarze aplikacji pokazuje imię i nazwisko użytkownika.
+    </div>
+    <button mat-raised-button class="mb-5" (click)="getUser()">Pobierz Użytkownika</button>
+    <mat-divider></mat-divider>
+    <app-user-details></app-user-details>
+
+    <mat-expansion-panel class="mb-5">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h3>Kod</h3>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <pre>
+        <code [languages]="['typescript']" [highlight]="tsP3"></code>
+        <code [languages]="['typescript']" [highlight]="tsP2"></code>
+        <code [languages]="['typescript']" [highlight]="tsP4"></code>
+        <code [languages]="['typescript']" [highlight]="tsP5"></code>
+      </pre>
+    </mat-expansion-panel>
+
+  </mat-expansion-panel>
+</mat-card>

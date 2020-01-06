@@ -1,0 +1,30 @@
+<mat-card>
+  Observable to strumień z wartościami (z pojedynczą lub wieloma, dowolnego typu – np. stringami, liczbami, obiektami,
+  tablicami), na który można nasłuchiwać i od którego w dowolnym momencie można się odłączyć
+  <br>
+  <p>W Angularze strumienie sa zwracane w wiel miejscach, min</p>
+  <ul>
+    <li>httpClient.get, post, etc.</li>
+    <li>Router.events</li>
+    <li>AbstractControl.valueChanges</li>
+    <li>ActivatedRoute.params</li>
+    <li>EventEmitter</li>
+  </ul>
+</mat-card>
+
+<mat-card class="mt-5 mb-5">
+  <mat-expansion-panel class="mb-5">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>Przykład</h3>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Przykład prostej funkcji zwracajacej Observable</p>
+    <p>Resultat jest widoczny w konsoli (f12)</p>
+    <button (click)="subCountDown()" mat-raised-button>Odliczaj!</button>
+
+    <pre>
+    <code [languages]="['typescript']" [highlight]="tsP1"></code>
+  </pre>
+  </mat-expansion-panel>
+</mat-card>
